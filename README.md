@@ -12,22 +12,27 @@
 
 *Anonymous blogging made simple - Just write and publish instantly*
 
+<img width="450" height="587" alt="image" src="https://github.com/user-attachments/assets/913d73a8-a13b-463a-a249-bb20062a23d3" />
+<img width="450" height="604" alt="image" src="https://github.com/user-attachments/assets/8ce9e2b0-f1ad-49d9-9c5b-87f860d31611" />
+
+
+
 </div>
 
 ---
 
 ## 🎯 **What is QuickBlog CLI?**
 
-A powerful command-line API client that connects to the QuickBlog platform for anonymous blogging. No accounts, no passwords - just install, write, and publish instantly to the live website.
+A powerful command-line API client that connects to the QuickBlog platform for anonymous blogging. No accounts, no passwords - just install, write, and publish instantly to the live website, and get shareable links.
 
 ### ✨ **Key Features**
-- **🚀 Zero Setup** - No registration or authentication required
+- **🚀 No Authentication Needed** - No registration or authentication required
 - **⚡ Instant Publishing** - Blogs appear live immediately
 - **📱 Session Management** - Edit/delete your blogs during session
 - **🎨 Beautiful CLI** - Colorful, interactive interface with ASCII art
 - **📝 Markdown Support** - Create from markdown files
 - **🏷️ Smart Tagging** - Choose from 10 predefined tags
-- **🌈 Visual Interface** - Gradients, tables, spinners, and colors
+- **🌈 Visual Interface** - Well-structured layout & components
 
 ---
 
@@ -35,18 +40,18 @@ A powerful command-line API client that connects to the QuickBlog platform for a
 
 ```bash
 # Install
-git clone <repo-url>
+git clone https://github.com/Divya4879/QuickBlog-API.git
 cd quickBlogAPI
 npm install
 
 # Initialize with beautiful ASCII banner
-node bin/quickblog.js init
+quickblog init
 
 # Create your first blog (interactive)
-node bin/quickblog.js create
+quickblog create
 
 # View all blogs in beautiful table format
-node bin/quickblog.js list
+quickblog list
 ```
 
 ---
@@ -57,61 +62,61 @@ node bin/quickblog.js list
 
 ```bash
 # Initialize CLI session with ASCII banner
-node bin/quickblog.js init
+quickblog init
 
 # Test API connection and server status
-node bin/quickblog.js test
+quickblog test
 
 # Show session status and your published blogs
-node bin/quickblog.js status
+quickblog status
 
 # Clear current session data
-node bin/quickblog.js clear
+quickblog clear
 
 # Show help and all available commands
-node bin/quickblog.js --help
+quickblog --help
 ```
 
 ### **📖 Reading & Discovery Commands**
 
 ```bash
 # List all published blogs (beautiful table format)
-node bin/quickblog.js list
+quickblog list
 
 # List only your session blogs
-node bin/quickblog.js list --session
-node bin/quickblog.js list -s
+quickblog list --session
+quickblog list -s
 
 # Read specific blog with formatted display
-node bin/quickblog.js read 12345678
+quickblog read 12345678
 ```
 
 ### **✍️ Content Creation Commands**
 
 ```bash
 # Create new blog (interactive mode with prompts)
-node bin/quickblog.js create
+quickblog create
 
 # Create blog from markdown file
-node bin/quickblog.js create --file blog.md
-node bin/quickblog.js create -f sample-post.md
+quickblog create --file blog.md
+quickblog create -f sample-post.md
 ```
 
 ### **✏️ Blog Management Commands**
 
 ```bash
 # Edit your blog (only from current session)
-node bin/quickblog.js edit 12345678
+quickblog edit 12345678
 
 # Delete your blog (only from current session)
-node bin/quickblog.js delete 12345678
+quickblog delete 12345678
 ```
 
 ---
 
 ## 🎨 **Interactive Blog Creation Flow**
 
-When you run `node bin/quickblog.js create`, you'll experience a beautiful interactive flow:
+When you run `quickblog create`, you'll experience a beautiful interactive flow:
 
 ### **Step 1: Title**
 ```
@@ -164,22 +169,22 @@ This is my blog content...
 
 ```bash
 # Setup & Status
-node bin/quickblog.js init          # Initialize with ASCII banner
-node bin/quickblog.js test          # Test API connection
-node bin/quickblog.js status        # Show session status
-node bin/quickblog.js clear         # Clear session data
-node bin/quickblog.js --help        # Show help
+quickblog init          # Initialize with ASCII banner
+quickblog test          # Test API connection
+quickblog status        # Show session status
+quickblog clear         # Clear session data
+quickblog --help        # Show help
 
 # Reading & Discovery
-node bin/quickblog.js list          # List all published blogs
-node bin/quickblog.js list -s       # List your session blogs only
-node bin/quickblog.js read <id>     # Read specific blog
+quickblog list          # List all published blogs
+quickblog list -s       # List your session blogs only
+quickblog read <id>     # Read specific blog
 
 # Content Creation & Management
-node bin/quickblog.js create        # Create blog (interactive)
-node bin/quickblog.js create -f <file>  # Create from markdown file
-node bin/quickblog.js edit <id>     # Edit your blog
-node bin/quickblog.js delete <id>   # Delete your blog
+quickblog create        # Create blog (interactive)
+quickblog create -f <file>  # Create from markdown file
+quickblog edit <id>     # Edit your blog
+quickblog delete <id>   # Delete your blog
 ```
 
 **Note:** After `npm install -g .` you can use just `quickblog` instead of `node bin/quickblog.js`
@@ -190,13 +195,13 @@ node bin/quickblog.js delete <id>   # Delete your blog
 
 ### **Initialize CLI**
 ```bash
-node bin/quickblog.js init
+quickblog init
 ```
 Shows rainbow ASCII banner and welcome message with available actions.
 
 ### **Test Connection**
 ```bash
-node bin/quickblog.js test
+quickblog test
 ```
 ```
 ⠋ Testing API connection...
@@ -206,7 +211,7 @@ Connected to: https://quick-blog-black-one.vercel.app
 
 ### **Check Status**
 ```bash
-node bin/quickblog.js status
+quickblog status
 ```
 ```
 📊 QuickBlog API Status
@@ -221,19 +226,19 @@ Blogs published in this session:
 
 ### **List All Blogs**
 ```bash
-node bin/quickblog.js list
+quickblog list
 ```
-Shows beautiful table with all published blogs, including ID, title, author, and links.
+Shows table with all published blogs, including ID, title, author, and links.
 
 ### **Read Specific Blog**
 ```bash
-node bin/quickblog.js read 17353445
+quickblog read 17353445
 ```
 Displays formatted blog with title, author, date, tags, content, word count, and action buttons.
 
 ### **Interactive Blog Creation**
 ```bash
-node bin/quickblog.js create
+quickblog create
 ```
 
 **Complete Interactive Flow:**
@@ -286,19 +291,19 @@ Welcome to my comprehensive CLI tutorial!
 
 ### **Create from Markdown File**
 ```bash
-node bin/quickblog.js create --file tutorial.md
+quickblog create --file tutorial.md
 ```
 Reads markdown file, extracts title from first heading, prompts for tags and author, then publishes.
 
 ### **Edit Blog**
 ```bash
-node bin/quickblog.js edit 17353445
+quickblog edit 17353445
 ```
 Shows current content, prompts for new title, author, content (with END_BLOG), and tags. Only works for session blogs.
 
 ### **Delete Blog**
 ```bash
-node bin/quickblog.js delete 17353445
+quickblog delete 17353445
 ```
 ```
 ⚠️  You are about to delete: "My Tech Tutorial"
@@ -342,6 +347,7 @@ const dependencies = {
 ```
 
 ### **QuickBlogAPI Class Structure**
+
 ```javascript
 class QuickBlogAPI {
   constructor() {
