@@ -160,427 +160,54 @@ This is my blog content...
 
 ---
 
-## 📋 **Complete API Commands Guide**
-
-### **🚀 Installation & Setup**
+## 📋 **Complete Commands List**
 
 ```bash
-# Clone and install
-git clone <repo-url>
-cd quickBlogAPI
-npm install
+# Setup & Status
+node bin/quickblog.js init          # Initialize with ASCII banner
+node bin/quickblog.js test          # Test API connection
+node bin/quickblog.js status        # Show session status
+node bin/quickblog.js clear         # Clear session data
+node bin/quickblog.js --help        # Show help
 
-# Initialize CLI (shows ASCII banner)
-node bin/quickblog.js init
+# Reading & Discovery
+node bin/quickblog.js list          # List all published blogs
+node bin/quickblog.js list -s       # List your session blogs only
+node bin/quickblog.js read <id>     # Read specific blog
+
+# Content Creation & Management
+node bin/quickblog.js create        # Create blog (interactive)
+node bin/quickblog.js create -f <file>  # Create from markdown file
+node bin/quickblog.js edit <id>     # Edit your blog
+node bin/quickblog.js delete <id>   # Delete your blog
 ```
 
-### **📋 All Available Commands**
+**Note:** After `npm install -g .` you can use just `quickblog` instead of `node bin/quickblog.js`
 
-#### **🔧 Setup & Status Commands**
+---
 
+## 🎯 **Detailed Command Examples**
+
+### **Initialize CLI**
 ```bash
-# Initialize CLI session with rainbow ASCII banner
 node bin/quickblog.js init
+```
+Shows rainbow ASCII banner and welcome message with available actions.
 
-# Test API connection and server status
+### **Test Connection**
+```bash
 node bin/quickblog.js test
-
-# Show session status and published blogs count
-node bin/quickblog.js status
-
-# Clear current session data
-node bin/quickblog.js clear
-
-# Show help and all available commands
-node bin/quickblog.js --help
+```
+```
+⠋ Testing API connection...
+✅ API connection successful!
+Connected to: https://quick-blog-black-one.vercel.app
 ```
 
-#### **📖 Reading & Discovery Commands**
-
-```bash
-# List all published blogs (beautiful table format)
-node bin/quickblog.js list
-
-# List only your session blogs
-node bin/quickblog.js list --session
-node bin/quickblog.js list -s
-
-# Read specific blog with formatted display
-node bin/quickblog.js read 12345678
-node bin/quickblog.js read abcd1234
-```
-
-#### **✍️ Content Creation Commands**
-
-```bash
-# Create new blog (interactive mode)
-node bin/quickblog.js create
-
-# Create blog from markdown file
-node bin/quickblog.js create --file blog.md
-node bin/quickblog.js create -f sample-post.md
-```
-
-#### **✏️ Blog Management Commands**
-
-```bash
-# Edit your blog (only from current session)
-node bin/quickblog.js edit 12345678
-
-# Delete your blog (only from current session)
-node bin/quickblog.js delete 12345678
-```
-
-### **🎨 Interactive Blog Creation - Complete Flow**
-
-#### **Command:**
-```bash
-node bin/quickblog.js create
-```
-
-#### **Step-by-Step Interactive Process:**
-
-**Step 1: Title Input**
-```
-📝 Create New Blog
-
-📌 Blog title: My Amazing Tech Tutorial
-```
-
-**Step 2: Tag Selection**
-```
-🏷️  Available tags:
-1. tech        2. career      3. personal    4. review      5. tutorial
-6. startup     7. coding      8. life        9. business    10. education
-
-Select tags (1-4 numbers separated by commas, or press Enter to skip): 1,5,7
-```
-
-**Step 3: Author Name**
-```
-👤 Author name: John Developer
-```
-*Note: Leave blank for "Anonymous"*
-
-**Step 4: Content Input**
-```
-📝 Blog content:
-Type your content. When finished, type "END_BLOG" on a new line and press Enter.
-────────────────────────────────────────────────────────────
-
-Welcome to my comprehensive guide on building CLI tools!
-
-## Getting Started
-
-First, you'll need to set up your development environment:
-
-1. Install Node.js
-2. Create a new project
-3. Add dependencies
-
-## Building the CLI
-
-Here's how to create your first command:
-
-```javascript
-const { program } = require('commander');
-program.parse();
-```
-
-This tutorial will walk you through everything step by step.
-
-Happy coding!
-
-END_BLOG
-```
-
-**Step 5: Preview**
-```
-📋 Blog Preview:
-════════════════════════════════════════════════════════════
-My Amazing Tech Tutorial
-👤 By John Developer
-🏷️  Tags: #tech #tutorial #coding
-────────────────────────────────────────────────────────────
-Welcome to my comprehensive guide on building CLI tools!
-
-## Getting Started
-
-First, you'll need to set up your development environment:
-...
-════════════════════════════════════════════════════════════
-```
-
-**Step 6: Confirmation**
-```
-🚀 Publish this blog on the site? (yes/no): yes
-```
-
-**Step 7: Publishing**
-```
-⠋ Publishing blog to site...
-✅ Blog published successfully!
-🆔 Blog ID: 1735344567890
-🌐 Live Link: https://quick-blog-black-one.vercel.app/article/my-amazing-tech-tutorial
-📱 Your blog is now live on the website!
-
-💡 Session Commands:
-📖 Read: quickblog read 17353445
-✏️  Edit: quickblog edit 17353445
-🗑️  Delete: quickblog delete 17353445
-```
-
-### **📄 Creating from Markdown File**
-
-#### **Command:**
-```bash
-node bin/quickblog.js create --file tutorial.md
-```
-
-#### **Markdown File Format:**
-```markdown
-# My Blog Title
-
-Your content goes here with **markdown** support.
-
-## Subheadings Work
-
-- Bullet points
-- Lists are supported
-- Multiple paragraphs
-
-### Code Blocks Too
-
-```javascript
-console.log("Hello World!");
-```
-
-Regular text and all standard markdown formatting.
-```
-
-#### **Interactive Flow for File Creation:**
-```
-📝 Creating blog from: tutorial.md
-Title: My Blog Title
-
-🏷️  Available tags:
-1. tech        2. career      3. personal    4. review      5. tutorial
-6. startup     7. coding      8. life        9. business    10. education
-
-Select tags (1-4 numbers separated by commas, or press Enter to skip): 1,5
-
-👤 Author name: Jane Doe
-
-📋 Blog Preview:
-════════════════════════════════════════════════════════════
-My Blog Title
-👤 By Jane Doe
-🏷️  Tags: #tech #tutorial
-────────────────────────────────────────────────────────────
-Your content goes here with markdown support...
-════════════════════════════════════════════════════════════
-
-🚀 Publish this blog on the site? (yes/no): yes
-
-⠋ Publishing blog to site...
-✅ Blog published successfully!
-```
-
-### **📊 List Command - Detailed Output**
-
-#### **Command:**
-```bash
-node bin/quickblog.js list
-```
-
-#### **Output:**
-```
-⠋ Fetching blogs...
-✅ Found 5 published blog(s)
-
-📚 Published Blogs
-═══════════════════════════════════════════════════════════════════════════════
-
-┌─────┬──────────┬────────────────────────────────┬──────────────────────┬─────────────────────────────────────┐
-│ No. │ ID       │ Title                          │ Author               │ Link                                │
-├─────┼──────────┼────────────────────────────────┼──────────────────────┼─────────────────────────────────────┤
-│ 1   │ 17353445 │ My Amazing Tech Tutorial       │ John Developer       │ ...quick-blog.../article/my-amaz... │
-│ 2   │ 17353446 │ Getting Started with APIs     │ Jane Doe             │ ...quick-blog.../article/getting... │
-│ 3   │ 17353447 │ Personal Journey in Tech       │ Anonymous            │ ...quick-blog.../article/personal.. │
-└─────┴──────────┴────────────────────────────────┴──────────────────────┴─────────────────────────────────────┘
-
-📊 Summary:
-   • Total blogs: 3
-   • Authors: 2
-   • Tags used: 8
-
-💡 Quick Actions:
-   📖 Read: quickblog read <id>
-   ✏️  Create: quickblog create
-   📋 Session: quickblog list --session
-   🌐 Website: https://quick-blog-black-one.vercel.app/discover.html
-```
-
-### **📖 Read Command - Detailed Output**
-
-#### **Command:**
-```bash
-node bin/quickblog.js read 17353445
-```
-
-#### **Output:**
-```
-⠋ Fetching blog...
-📖 Blog loaded
-
-════════════════════════════════════════════════════════════════════════════════
-📖 My Amazing Tech Tutorial
-👤 By John Developer • 📅 12/28/2025
-🏷️  #tech #tutorial #coding
-════════════════════════════════════════════════════════════════════════════════
-
-Welcome to my comprehensive guide on building CLI tools!
-
-## Getting Started
-
-First, you'll need to set up your development environment:
-
-1. Install Node.js
-2. Create a new project
-3. Add dependencies
-
-## Building the CLI
-
-Here's how to create your first command:
-
-```javascript
-const { program } = require('commander');
-program.parse();
-```
-
-This tutorial will walk you through everything step by step.
-
-Happy coding!
-
-════════════════════════════════════════════════════════════════════════════════
-📊 Word count: 45 words
-🆔 Blog ID: 1735344567890
-🌐 Blog Link: https://quick-blog-black-one.vercel.app/article/my-amazing-tech-tutorial
-
-💡 Your Blog Actions:
-   ✏️  Edit: quickblog edit 17353445
-   🗑️  Delete: quickblog delete 17353445
-```
-
-### **✏️ Edit Command - Interactive Flow**
-
-#### **Command:**
-```bash
-node bin/quickblog.js edit 17353445
-```
-
-#### **Interactive Process:**
-```
-📝 Editing: My Amazing Tech Tutorial
-
-Title (My Amazing Tech Tutorial): Updated Tech Tutorial Guide
-Author (John Developer): John Developer
-
-📝 Current content:
-════════════════════════════════════════════════════════════
-Welcome to my comprehensive guide on building CLI tools!
-
-## Getting Started
-
-First, you'll need to set up your development environment:
-
-1. Install Node.js
-2. Create a new project
-3. Add dependencies
-
-## Building the CLI
-
-Here's how to create your first command:
-
-```javascript
-const { program } = require('commander');
-program.parse();
-```
-
-This tutorial will walk you through everything step by step.
-
-Happy coding!
-════════════════════════════════════════════════════════════
-
-Type new content (or press Enter to keep current content):
-When finished, type "END_BLOG" on a new line and press Enter.
-
-Welcome to my UPDATED comprehensive guide on building CLI tools!
-
-## What's New in This Version
-
-I've added more examples and better explanations.
-
-## Getting Started
-
-First, you'll need to set up your development environment:
-
-1. Install Node.js (version 16+)
-2. Create a new project
-3. Add dependencies
-4. Set up your project structure
-
-## Building the CLI
-
-Here's how to create your first command:
-
-```javascript
-const { program } = require('commander');
-
-program
-  .name('my-cli')
-  .description('My awesome CLI tool')
-  .version('1.0.0');
-
-program.parse();
-```
-
-This updated tutorial includes more detailed examples.
-
-Happy coding!
-
-END_BLOG
-
-Tags (tech, tutorial, coding): tech, tutorial, coding, nodejs
-
-⠋ Updating blog...
-✅ Blog updated successfully!
-```
-
-### **🗑️ Delete Command - Interactive Flow**
-
-#### **Command:**
-```bash
-node bin/quickblog.js delete 17353445
-```
-
-#### **Interactive Process:**
-```
-⚠️  You are about to delete: "My Amazing Tech Tutorial"
-Are you sure you want to delete this blog? (yes/no): yes
-
-⠋ Deleting blog...
-✅ Blog deleted from website and session!
-```
-
-### **📊 Status Command - Detailed Output**
-
-#### **Command:**
+### **Check Status**
 ```bash
 node bin/quickblog.js status
 ```
-
-#### **Output:**
 ```
 📊 QuickBlog API Status
 
@@ -590,104 +217,110 @@ Session Blogs: 2
 Blogs published in this session:
 1. My Amazing Tech Tutorial (17353445...)
 2. Getting Started with APIs (17353446...)
-
-💡 Use quickblog list --session to see your session blogs
 ```
 
-### **🧪 Test Command - Connection Check**
-
-#### **Command:**
-```bash
-node bin/quickblog.js test
-```
-
-#### **Successful Output:**
-```
-🧪 Testing QuickBlog API Connection
-
-⠋ Testing API connection...
-✅ API connection successful!
-Connected to: https://quick-blog-black-one.vercel.app
-```
-
-### **🔧 Init Command - Startup Banner**
-
-#### **Command:**
-```bash
-node bin/quickblog.js init
-```
-
-#### **Output:**
-```
- ██████╗ ██╗   ██╗██╗ ██████╗██╗  ██╗██████╗ ██╗      ██████╗  ██████╗ 
-██╔═══██╗██║   ██║██║██╔════╝██║ ██╔╝██╔══██╗██║     ██╔═══██╗██╔════╝ 
-██║   ██║██║   ██║██║██║     █████╔╝ ██████╔╝██║     ██║   ██║██║  ███╗
-██║▄▄ ██║██║   ██║██║██║     ██╔═██╗ ██╔══██╗██║     ██║   ██║██║   ██║
-╚██████╔╝╚██████╔╝██║╚██████╗██║  ██╗██████╔╝███████╗╚██████╔╝╚██████╔╝
- ╚══▀▀═╝  ╚═════╝ ╚═╝ ╚═════╝╚═╝  ╚═╝╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝ 
-
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                                                                             │
-│   🚀 QuickBlog API Initialized!                                            │
-│                                                                             │
-│   Welcome! You can now:                                                    │
-│   • View all published blogs                                               │
-│   • Create and publish new blogs                                           │
-│   • Edit/delete blogs from this session                                    │
-│                                                                             │
-│   Use --help to see all commands                                           │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
-
-### **🏷️ Available Tags**
-
-When creating or editing blogs, you can choose from these 10 tags:
-
-1. **tech** - Technology and programming
-2. **career** - Career advice and experiences
-3. **personal** - Personal stories and thoughts
-4. **review** - Product or service reviews
-5. **tutorial** - How-to guides and tutorials
-6. **startup** - Startup and entrepreneurship
-7. **coding** - Programming and development
-8. **life** - Life experiences and philosophy
-9. **business** - Business insights and strategies
-10. **education** - Learning and educational content
-
-**Usage:** Select 1-4 tags by entering numbers separated by commas (e.g., `1,5,7`)
-
-### **🔍 Error Handling Examples**
-
-#### **Blog Not Found:**
-```bash
-node bin/quickblog.js read 99999999
-```
-```
-⠋ Fetching blog...
-❌ Blog not found
-```
-
-#### **Edit Permission Denied:**
-```bash
-node bin/quickblog.js edit 12345678
-```
-```
-❌ Blog not found in this session
-You can only edit blogs published in this session
-Use quickblog list --session to see your session blogs
-```
-
-#### **Connection Error:**
+### **List All Blogs**
 ```bash
 node bin/quickblog.js list
 ```
+Shows beautiful table with all published blogs, including ID, title, author, and links.
+
+### **Read Specific Blog**
+```bash
+node bin/quickblog.js read 17353445
 ```
-⠋ Fetching blogs...
-❌ Failed to fetch blogs
-Error: 500 - Internal Server Error
-Message: Database connection failed
+Displays formatted blog with title, author, date, tags, content, word count, and action buttons.
+
+### **Interactive Blog Creation**
+```bash
+node bin/quickblog.js create
 ```
+
+**Complete Interactive Flow:**
+```
+📝 Create New Blog
+
+📌 Blog title: My Tech Tutorial
+
+🏷️  Available tags:
+1. tech    2. career   3. personal  4. review    5. tutorial
+6. startup 7. coding   8. life      9. business  10. education
+
+Select tags (1-4 numbers, comma-separated): 1,5,7
+
+👤 Author name: John Developer
+
+📝 Blog content:
+Type your content. When finished, type "END_BLOG" on a new line.
+────────────────────────────────────────────────────────────
+
+Welcome to my comprehensive CLI tutorial!
+
+## Getting Started
+First, install Node.js and set up your project.
+
+## Building Commands
+Use commander.js for CLI structure.
+
+Happy coding!
+
+END_BLOG
+
+📋 Blog Preview:
+════════════════════════════════════════════════════════════
+My Tech Tutorial
+👤 By John Developer
+🏷️  Tags: #tech #tutorial #coding
+────────────────────────────────────────────────────────────
+Welcome to my comprehensive CLI tutorial!
+...
+════════════════════════════════════════════════════════════
+
+🚀 Publish this blog on the site? (yes/no): yes
+
+⠋ Publishing blog to site...
+✅ Blog published successfully!
+🆔 Blog ID: 1735344567890
+🌐 Live Link: https://quick-blog-black-one.vercel.app/article/my-tech-tutorial
+```
+
+### **Create from Markdown File**
+```bash
+node bin/quickblog.js create --file tutorial.md
+```
+Reads markdown file, extracts title from first heading, prompts for tags and author, then publishes.
+
+### **Edit Blog**
+```bash
+node bin/quickblog.js edit 17353445
+```
+Shows current content, prompts for new title, author, content (with END_BLOG), and tags. Only works for session blogs.
+
+### **Delete Blog**
+```bash
+node bin/quickblog.js delete 17353445
+```
+```
+⚠️  You are about to delete: "My Tech Tutorial"
+Are you sure? (yes/no): yes
+
+⠋ Deleting blog...
+✅ Blog deleted from website and session!
+```
+
+### **Available Tags**
+1. **tech** - Technology and programming
+2. **career** - Career advice  
+3. **personal** - Personal stories
+4. **review** - Product reviews
+5. **tutorial** - How-to guides
+6. **startup** - Entrepreneurship
+7. **coding** - Development
+8. **life** - Life experiences
+9. **business** - Business insights
+10. **education** - Learning content
+
+**Usage:** Enter numbers 1-4, comma-separated (e.g., `1,5,7`)
 
 ---
 
