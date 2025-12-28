@@ -1,0 +1,29 @@
+{
+  "name": "quickblog-api",
+  "version": "1.0.0",
+  "description": "CLI API client for QuickBlog platform",
+  "main": "index.js",
+  "bin": {
+    "quickblog": "./bin/quickblog.js"
+  },
+  "scripts": {
+    "start": "node bin/quickblog.js",
+    "test": "node test.js",
+    "setup": "./setup.sh"
+  },
+  "keywords": ["blog", "cli", "api", "quickblog"],
+  "author": "QuickBlog",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.1.0",
+    "axios": "^1.6.2",
+    "conf": "^10.2.0",
+    "ora": "^5.4.1",
+    "table": "^6.8.1",
+    "picocolors": "^1.0.0",
+    "cli-table3": "^0.6.3",
+    "boxen": "^5.1.2",
+    "figlet": "^1.7.0",
+    "gradient-string": "^2.0.2"
+  }
+}
