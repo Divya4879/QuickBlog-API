@@ -405,7 +405,7 @@ class QuickBlogAPI {
 
 Create blogs from markdown files with this structure:
 
-```markdown
+````markdown
 # Your Blog Title
 
 Your blog content goes here with full **markdown** support.
@@ -423,7 +423,7 @@ console.log("Hello World!");
 ```
 
 Regular text and all standard markdown formatting is supported.
-```
+````
 
 ---
 
@@ -434,23 +434,23 @@ Regular text and all standard markdown formatting is supported.
 # Setup
 cd quickBlogAPI
 npm install
-node bin/quickblog.js init
+quickblog init
 
 # Test connection
-node bin/quickblog.js test
+quickblog test
 
 # Explore existing content
-node bin/quickblog.js list
+quickblog list
 
 # Create your first blog
-node bin/quickblog.js create
+quickblog create
 # Follow interactive prompts...
 
 # Check your session
-node bin/quickblog.js list --session
+quickblog list --session
 
 # Read your published blog
-node bin/quickblog.js read 12345678
+quickblog read 12345678
 ```
 
 ### **Example 2: Markdown Publishing**
@@ -468,26 +468,26 @@ This is a comprehensive guide to...
 Happy coding! 🚀" > tutorial.md
 
 # Publish from file
-node bin/quickblog.js create --file tutorial.md
+quickblog create --file tutorial.md
 ```
 
 ### **Example 3: Blog Management**
 ```bash
 # Check your session status
-node bin/quickblog.js status
+quickblog status
 
 # List your blogs
-node bin/quickblog.js list --session
+quickblog list --session
 
 # Edit a blog
-node bin/quickblog.js edit 12345678
+quickblog edit 12345678
 # Follow prompts to update content...
 
 # Delete a blog
-node bin/quickblog.js delete 12345678
+quickblog delete 12345678
 
 # Clear session when done
-node bin/quickblog.js clear
+quickblog clear
 ```
 
 ---
@@ -542,10 +542,10 @@ node bin/quickblog.js clear
 ### **Connection Issues**
 ```bash
 # Test connectivity
-node bin/quickblog.js test
+quickblog test
 
 # Check status
-node bin/quickblog.js status
+quickblog status
 ```
 
 **Common Solutions:**
@@ -562,13 +562,13 @@ node bin/quickblog.js status
 ### **Session Management Issues**
 ```bash
 # Check session
-node bin/quickblog.js status
+quickblog status
 
 # Reset session
-node bin/quickblog.js clear
+quickblog clear
 
 # List session blogs
-node bin/quickblog.js list --session
+quickblog list --session
 ```
 
 **Remember:** Only blogs from your current session can be edited/deleted
@@ -580,7 +580,7 @@ node bin/quickblog.js list --session
 ### **Development Setup**
 ```bash
 # Clone and setup
-git clone <repo-url>
+git clone https://github.com/Divya4879/QuickBlog-API.git
 cd quickBlogAPI
 npm install
 
@@ -588,19 +588,19 @@ npm install
 node test.js
 
 # Run any command
-node bin/quickblog.js --help
+quickblog --help
 ```
 
 ### **Testing Commands**
 ```bash
 # Test API connection
-node bin/quickblog.js test
+quickblog test
 
 # Test blog creation from file
-node bin/quickblog.js create --file sample-post.md
+quickblog create --file sample-post.md
 
 # Test session management
-node bin/quickblog.js status
+quickblog status
 ```
 
 ---
@@ -608,13 +608,13 @@ node bin/quickblog.js status
 ## 📊 **Performance & Reliability**
 
 ### **CLI Performance**
-- **Fast Startup** - < 1 second initialization
+- **Fast Startup** - < 1 sec initialization
 - **Responsive UI** - Immediate command feedback
 - **Efficient Storage** - Minimal local data footprint
 - **Error Handling** - Graceful failure recovery
 
 ### **API Reliability**
-- **Timeout Handling** - 15-second request timeout
+- **Timeout Handling** - 15-sec request timeout
 - **Error Recovery** - Detailed error messages
 - **Connection Testing** - Built-in connectivity checks
 - **Session Persistence** - Survives network issues
@@ -635,22 +635,15 @@ node bin/quickblog.js status
 - **Draft Testing** - Test content before main blog
 - **Community Engagement** - Connect with readers
 
-### **🎓 For Educators**
-- **Course Content** - Share educational materials
-- **Student Resources** - Provide learning materials
-- **Quick Announcements** - Instant communication
-- **Knowledge Sharing** - Build educational content
-
 ---
 
 ## 🚀 **Getting Started Checklist**
 
-- [ ] **Clone repository** - `git clone <repo-url>`
+- [ ] **Clone repository** - `git clone https://github.com/Divya4879/QuickBlog-API.git`
 - [ ] **Install dependencies** - `npm install`
-- [ ] **Initialize CLI** - `node bin/quickblog.js init`
-- [ ] **Test connection** - `node bin/quickblog.js test`
-- [ ] **Create first blog** - `node bin/quickblog.js create`
-- [ ] **Explore commands** - `node bin/quickblog.js --help`
+- [ ] **Initialize CLI** - `quickblog init`
+- [ ] **Test connection** - `quickblog test`
+- [ ] **Explore commands** - `quickblog --help`
 
 ---
 
@@ -671,7 +664,5 @@ MIT License - Feel free to use, modify, and distribute.
 <div align="center">
 
 **Built for anonymous creators and instant publishers** ✍️
-
-*No signup • No limits • Just pure blogging freedom*
 
 </div>
